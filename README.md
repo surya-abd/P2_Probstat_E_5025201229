@@ -13,9 +13,11 @@ data = read.csv("C:/Users/LENOVO/Downloads/prak.csv")
 data
 ```
 <img width="61" alt="image" src="https://user-images.githubusercontent.com/103357229/170878094-d0441306-b6e7-491b-9c6a-a27d6db2b4f4.png">
+
 ### 1.A.
 Carilah Standar Deviasi dari data selisih pasangan pengamatan tabel diatas
 > mendapatkan data selisih
+
 ```sh
 selisih = data$Y - data$X
 selisih
@@ -27,6 +29,7 @@ selisih
 sd(selisih)
 ```
 <img width="92" alt="image" src="https://user-images.githubusercontent.com/103357229/170878221-abfd0f0a-056f-4a78-809e-9342f2247897.png">
+
 ### 1.B.
 carilah nilai t (p-value)
 > nilai t(p-value) dapat kita cari menggunakan fungsi `t.test`
@@ -36,6 +39,7 @@ t.test(data$Y, data$X, paired=TRUE)
 ```
 <img width="389" alt="image" src="https://user-images.githubusercontent.com/103357229/170878253-cf42fdf6-3ab6-4e99-9002-abc8be28f353.png">
 jadi didapatkan nilai t(p-value) adalah 7.6525
+
 ### 1.C.
 tentukanlah apakah terdapat pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen , sebelum dan sesudah melakukan aktivitas 𝐴 jika diketahui tingkat signifikansi 𝛼 = 5% serta H0 : “tidak ada oksigen , sebelum dan sesudah melakukan aktivitas 𝐴”
 > mencari nilai kritis dari t table, dengan df = 8, alpha = 0.05
@@ -145,6 +149,7 @@ sample_bali
 ```
 <img width="385" alt="image" src="https://user-images.githubusercontent.com/103357229/170879264-494acd66-3009-44f0-a0f7-f192c5852883.png">
 Didapati nilai 2.714286 untuk sampel bandung dan 2.793103 untuk sampel bali
+
 ### 3.C.
 Lakukan Uji Statistik (df =2)
 > apabila library BSDA belum diinstall, maka dapat jalankan code berikut:
@@ -164,6 +169,7 @@ tsum.test(mean.x=mean_bandung, s.x = sd_bandung, n.x =n_bandung,
 ```
 <img width="391" alt="image" src="https://user-images.githubusercontent.com/103357229/170879388-20c13324-a474-4d00-842d-d00a99a9b031.png">
 didapatkan hasil nilai-t = 1.9267, p-value = 0.03024
+
 ### 3.D.
 Nilai Kritikal
 > Untuk mencari nilai kritis, kita dapat memanfaatkan fungsi `qt`
@@ -173,6 +179,7 @@ nilai2_kritis <- qt(p = alpha/2, df = 2, lower.tail = FALSE)
 nilai2_kritis
 ```
 <img width="361" alt="image" src="https://user-images.githubusercontent.com/103357229/170879458-00826d59-b271-4382-90d6-e5ec0a790b88.png">
+
 ### 3.E.
 Keputusan
 > Karena nilai-t hitung lebih kecil dari titik kritis (nilai-t hitung berada dalam jangkauan area menerima H0) maka tidak ada bukti yang cukup untuk menolak H0
@@ -193,6 +200,7 @@ data4 = read.delim("C:/Users/LENOVO/Downloads/onewayanova.txt", header = TRUE, s
 data4
 ```
 <img width="113" alt="image" src="https://user-images.githubusercontent.com/103357229/170879538-201cd874-d600-4a38-aa2b-36d8af8c8b09.png">
+
 ### 4.A.
 Buatlah masing masing jenis spesies menjadi 3 subjek "Grup" (grup 1,grup 2,grup 3). Lalu Gambarkan plot kuantil normal untuk setiap kelompok dan lihat apakah ada outlier utama dalam homogenitas varians.
 > Apabila library ggpubr belum terinstall, maka dapat diinstall dengan code berikut:
@@ -236,6 +244,7 @@ dari bartlett test di atas, didapatkan nilai p-value sebesar 0.8054, di mana nil
 summary(anova)[[1]][1,5]
 ```
 <img width="165" alt="image" src="https://user-images.githubusercontent.com/103357229/170880039-f5b4c5e7-715f-4485-aa31-f4f07c55f56f.png">
+
 ### 4.C.
 Untuk uji ANOVA (satu arah), buatlah model linier dengan Panjang versus Grup dan beri nama model tersebut model 1.
 > dapat menggunakan fungsi `lm` untuk membuat model linear
@@ -251,6 +260,7 @@ summary(model_1)
 plot(data4$Length, data4$Group, main = "model 1")
 ```
 <img width="441" alt="image" src="https://user-images.githubusercontent.com/103357229/170880203-05cd8246-d218-494b-b21c-69e6f3b7b59b.png">
+
 ### 4.D.
 Dari Hasil Poin C, Berapakah nilai-p ? , Apa yang dapat Anda simpulkan dari H0?
 > Dari hasil poin C didapatkan nilai p-value sebesar 0.6400532 karena nilai p-value lebih besa dari alpha (0.05), maka menerima H0 dengan kata lain tidak ada perbedaan panjang antara ketiga spesies atau rata-rata panjangnya sama
@@ -307,6 +317,7 @@ GTL <- read.csv("C:/Users/LENOVO/Downloads/GTL.csv")
 GTL
 ```
 <img width="117" alt="image" src="https://user-images.githubusercontent.com/103357229/170880667-0dbc0614-f1d1-40fa-858e-935cb19162a6.png">
+
 ### 5.A.
 Buatlah plot sederhana untuk visualisasi data
 > dapat menggunakan fungsi `qplot`
@@ -316,6 +327,7 @@ qplot(x = Temp, y = Light, geom = "point", data = GTL) +
   facet_grid(.~Glass, labeller = label_both)
 ```
 <img width="440" alt="image" src="https://user-images.githubusercontent.com/103357229/170880764-8f4fd252-17df-472b-b1f4-071917d5b2b5.png">
+
 ### 5.B.
 Lakukan uji ANOVA dua arah
 > memeriksa struktur data. dengan fungsi `str`
@@ -350,6 +362,7 @@ data_summary <- group_by(GTL, Glass, Temp) %>%
 print(data_summary)
 ```
 <img width="161" alt="image" src="https://user-images.githubusercontent.com/103357229/170881012-c537a626-e654-4bfc-982d-c50f1031f745.png">
+
 ### 5.D.
 Lakukan uji Tukey
 ```sh
@@ -357,6 +370,7 @@ tukey <- TukeyHSD(anova)
 print(tukey)
 ```
 <img width="345" alt="image" src="https://user-images.githubusercontent.com/103357229/170881070-dddaac4e-047b-4149-8799-874a8535b05f.png">
+
 ### 5.E.
 Gunakan compact letter display untuk menunjukkan perbedaan signifikan antara uji Anova dan uji Tukey
 > untuk menjalankan code berikut, diperlukan install multcompView
