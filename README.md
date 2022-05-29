@@ -50,6 +50,7 @@ qt(p = .05/2, df=8, lower.tail = FALSE)
 <img width="240" alt="image" src="https://user-images.githubusercontent.com/103357229/170878392-ad03f49f-e2df-4bbb-9d0d-13fb1bb1442a.png">
 didapatkan nilai kritis 2.306004. Dari hal ini dapat kita simpulkan nilai t hitung > t kritis, yakni 7.6525 > 2.306004 Sehingga hipotesis nol ditolak dan hipotesis alternatif diterima. 
 Hal ini menunjukkan bahwa terdapat pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen, sebelum dan sesudah melakukan aktivitas A
+
 ## _Soal 2_
 Diketahui bahwa mobil dikemudikan rata-rata lebih dari 20.000 kilometer per tahun. Untuk menguji klaim ini, 100 pemilik mobil yang dipilih secara acak diminta untuk mencatat jarak yang mereka tempuh. Jika sampel acak menunjukkan rata-rata 23.500 kilometer dan standar deviasi 3900 kilometer. (Kerjakan menggunakan library seperti referensi pada modul).
 > Memasukkan variabel-variabel yang diketahui, Karena dalam soal tidak diketahui confidence level, maka nilai confidence level akan diset menjadi 5% (alpha)
