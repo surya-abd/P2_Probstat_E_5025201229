@@ -42,6 +42,7 @@ sample_sd <- 3900
 # pada soal tidak disebutkan nilai interval confidence, sehingga akan dianggap 0.05
 # menghitung nilai kritis
 nilai_kritis <- qnorm(p=.05, lower.tail = FALSE)
+nilai_kritis
 
 #menghitung nilai statistik
 z_score <- (sample_rata - klaim_rata) / (sample_sd * sqrt(n))
