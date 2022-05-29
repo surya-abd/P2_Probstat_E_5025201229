@@ -213,6 +213,9 @@ print(data_summary)
 tukey <- TukeyHSD(anova)
 print(tukey)
 # E
+install.packages("multcompView")
+
+library("multcompView")
 tukey.cld <- multcompLetters4(anova, tukey)
 print(tukey.cld)
 
